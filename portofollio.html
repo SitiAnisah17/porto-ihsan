@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Muhammad Ihsan Favian</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background: #f5f5f5;
+        }
+        
+        /* Navbar */
+        nav {
+            background: #15776a;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav h1 {
+            margin: 0;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav li {
+            margin: 0 15px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        nav a:hover {
+            color: #4ee6cc;
+        }
+        
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 48px;
+            background: #4ee6cc;
+            border-radius: 20px;
+            color: white;
+            margin: 20px;
+        }
+        
+        .hero-content {
+            max-width: 50%;
+        }
+        
+        .hero h1 {
+            font-size: 40px;
+            margin: 0;
+        }
+        
+        .hero h2 {
+            font-size: 24px;
+            margin-top: 18px;
+        }
+        
+        .hero p {
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+        
+        .profile-img {
+            width: 210px;
+            height: 250px;
+            border-radius: 50%;
+            border: 3px solid rgb(32, 29, 29);
+            object-fit: cover;
+        }
+        
+        button {
+            margin-top: 28px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 28px;
+            background: white;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background: lightblue;
+            color: white;
+        }
+        
+        /* Skills Section */
+        .skills-container {
+            display: flex;
+            gap: 48px;
+            padding: 20px;
+            overflow-x: auto;
+            margin: 20px;
+        }
+        
+        .skill-card {
+            flex: 0 0 220px;
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .skill-icon {
+            height: 50px;
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+        
+        .skill-card h3 {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        .skill-card p {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        /* Achievements Section */
+        .achievements-section {
+            padding: 20px;
+            margin: 20px;
+        }
+        
+        .achievements-section h3 {
+            color: rgb(81, 78, 78);
+            margin-bottom: 5px;
+        }
+        
+        .achievements-section h1 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: #15776a;
+        }
+        
+        .achievements-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .achievement-card {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            width: 250px;
+            background: white;
+        }
+        
+        .year {
+            color: gray;
+            margin: 0;
+            font-size: 14px;
+        }
+        
+        .achievement-card h3 {
+            margin: 5px 0;
+            color: #15776a;
+        }
+        
+        .achievement-card p {
+            color: gray;
+            margin: 0;
+            font-size: 14px;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background: #4ee6cc;
+            border-radius: 30px;
+            padding: 30px;
+            color: white;
+            margin: 20px;
+            text-align: center;
+        }
+        
+        .contact-title {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .contact-subtitle {
+            margin-bottom: 30px;
+        }
+        
+        .divider {
+            margin: 20px auto;
+            width: 70%;
+            border: 0;
+            border-top: 1px solid #ffffff;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        
+        .contact-item {
+            text-align: center;
+            margin: 15px;
+        }
+        
+        .contact-icon {
+            background: black;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 20px;
+            font-size: 24px;
+        }
+        
+        .contact-label {
+            font-size: 12px;
+            letter-spacing: 2px;
+            color: white;
+            margin-bottom: 5px;
+        }
+        
+        .contact-detail {
+            font-weight: bold;
+        }
+        
+        /* Footer */
+        footer {
+            background: #15776a;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px;
+            }
+            
+            .hero-content {
+                max-width: 100%;
+                margin-bottom: 30px;
+            }
+            
+            .skills-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .skill-card {
+                flex: 1;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <h1>MyPortfolio</h1>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#skills">Projects</a></li>
+            <li><a href="#achievements">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Muhammad Ihsan Favian</h1>
+            <h2>Ingin Menjadi PROGRAMMER</h2>
+            <p>
+                Saya adalah calon programmer yang bersemangat dalam belajar teknologi terbaru. 
+                Memiliki kemampuan pemecahan masalah dan pengembangan perangkat lunak.
+            </p>
+            <button onclick="downloadCV()">Download CV</button>
+        </div>
+        <div>
+            <img src="https://ui-avatars.com/api/?name=M+I+F&background=15776a&color=fff&size=250&bold=true" 
+                 alt="Profile Photo" class="profile-img">
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="skills-container">
+            <div class="skill-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/1006/1006363.png" 
+                     alt="Programming" class="skill-icon">
+                <h3>Pemrograman</h3>
+                <p>Saya berkemampuan untuk menulis kode program dalam berbagai bahasa pemrograman, seperti Java, Python, C++, atau JavaScript.</p>
+            </div>
+            <div class="skill-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/2011/2011672.png" 
+                     alt="Problem Solving" class="skill-icon">
+                <h3>Pemecahan Masalah</h3>
+                <p>Saya berkemampuan untuk menganalisis dan memecahkan masalah yang terkait dengan pengembangan perangkat lunak.</p>
+            </div>
+            <div class="skill-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/3024/3024551.png" 
+                     alt="Project Management" class="skill-icon">
+                <h3>Manajemen Proyek</h3>
+                <p>Saya berkemampuan untuk mengelola proyek pengembangan perangkat lunak dari awal hingga akhir.</p>
+            </div>
+            <div class="skill-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/3067/3067256.png" 
+                     alt="Security" class="skill-icon">
+                <h3>Keamanan Perangkat Lunak</h3>
+                <p>Saya berkemampuan untuk mengembangkan dan mengimplementasikan sistem keamanan perangkat lunak.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="achievements-section">
+        <h3>Work Experience</h3>
+        <h1>Achievement</h1>
+        <div class="achievements-container">
+            <div class="achievement-card">
+                <p class="year">2023</p>
+                <h3>Website Design</h3>
+                <p>Breakthrough designer of the year 2024</p>
+            </div>
+            <div class="achievement-card">
+                <p class="year">2024</p>
+                <h3>Web Animation</h3>
+                <p>Breakthrough designer of the year 2024</p>
+            </div>
+            <div class="achievement-card">
+                <p class="year">2024</p>
+                <h3>Front-end Developer</h3>
+                <p>Breakthrough developer of the year 2025</p>
+            </div>
+            <div class="achievement-card">
+                <p class="year">2021</p>
+                <h3>Best Website Design</h3>
+                <p>Breakthrough designer of the year 2022</p>
+            </div>
+            <div class="achievement-card">
+                <p class="year">2022</p>
+                <h3>UI/UX Design Award</h3>
+                <p>Breakthrough designer of the year 2023</p>
+            </div>
+            <div class="achievement-card">
+                <p class="year">2025</p>
+                <h3>Software Quality Assurance</h3>
+                <p>Breakthrough SQA of the year 2025</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <h1 class="contact-title">Contact Me</h1>
+        <p class="contact-subtitle">I'm open for collaboration, let's build something great together</p>
+        <div class="divider"></div>
+        <div class="contact-info">
+            <div class="contact-item">
+                <div class="contact-icon">✉️</div>
+                <p class="contact-label">EMAIL</p>
+                <p class="contact-detail">ihsanfavian831@gmail.com</p>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">📞</div>
+                <p class="contact-label">PHONE</p>
+                <p class="contact-detail">0895401439307</p>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">👨‍💻</div>
+                <p class="contact-label">GITHUB</p>
+                <p class="contact-detail">github.com/ihsanfavian831</p>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">📱</div>
+                <p class="contact-label">INSTAGRAM</p>
+                <p class="contact-detail">@ihsan._.f</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2023 Muhammad Ihsan Favian. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Download CV function
+        function downloadCV() {
+            alert('CV download akan segera tersedia. Untuk saat ini, silahkan hubungi via email untuk CV lengkap.');
+        }
+        
+        // Navbar background on scroll
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if(window.scrollY > 50) {
+                nav.style.backgroundColor = 'rgba(21, 119, 106, 0.95)';
+            } else {
+                nav.style.backgroundColor = '#15776a';
+            }
+        });
+    </script>
+</body>
+</html>
